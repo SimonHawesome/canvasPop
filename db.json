@@ -1,0 +1,24 @@
+{
+    "flavours": [{
+            "id": 1,
+            "title": "Cherry",
+            "image": "cherry-popsicle.png"
+        },
+        {
+            "id": 2,
+            "title": "Orange",
+            "image": "orange-popsicle.png"
+        },
+        {
+            "id": 3,
+            "title": "Rocket",
+            "image": "rocket-popsicle.png"
+        }
+    ],
+    "orders": [{
+        "id": 1,
+        "orderedBy": "Dave",
+        "flavour": 1,
+        "shouldSubscribe": false
+    }]
+}

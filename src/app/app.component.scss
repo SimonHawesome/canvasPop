@@ -1,0 +1,19 @@
+@import "../assets/scss/sass-imports.scss";
+html {
+    background-color: $albescent-white;
+}
+
+.app-container {
+    background-color: $albescent-white;
+    padding: 25px 0;
+    @include breakpoint($screen-sm) {
+        padding: 100px 0 25px;
+    }
+}
+
+.popsicle-container {
+    display: none;
+    @include breakpoint($screen-sm) {
+        display: block;
+    }
+}

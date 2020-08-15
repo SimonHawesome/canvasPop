@@ -1,0 +1,12 @@
+@import "../../assets/scss/sass-imports.scss";
+.popsicle-img {
+    display: block;
+    width: 75%;
+    @include breakpoint($screen-sm) {
+        margin: 0 auto;
+        width: 75%;
+    }
+    @include breakpoint($screen-md) {
+        width: auto;
+    }
+}

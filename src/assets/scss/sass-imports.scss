@@ -1,0 +1,36 @@
+$albescent-white: #f5e4d1;
+$cloud-burst: #1f3650;
+$astronaut: #262371;
+$merino: #f7f0ea;
+$cloudy: #b1aba5;
+$white: #ffffff;
+// Bootstrap built-in breakpoints
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+// Mobile first breakpoint media queries
+@mixin breakpoint($size) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin transition($type, $time) {
+    -webkit-transition: $type $time ease-out;
+    -moz-transition: $type $time ease-out;
+    -o-transition: $type $time ease-out;
+    transition: $type $time ease-out;
+}
+
+@mixin translate($x, $y) {
+    -webkit-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    transform: translate($x, $y);
+}
+
+@mixin roundedBorders($topLeft, $topRight, $bottomRight, $bottomLeft) {
+    -webkit-border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+    border-radius: $topLeft $topRight $bottomRight $bottomLeft;
+}
