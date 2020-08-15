@@ -3,11 +3,17 @@
         <div class="row">
             <div class="col-12 col-md-5 col-lg-6">
                 <div class="popsicle-container">
-                    <app-popsicle *ngIf="selectedFlavour" [selectedFlavour]="selectedFlavour"></app-popsicle>
+                    <app-popsicle 
+                    *ngIf="selectedFlavour" 
+                    [selectedFlavour]="selectedFlavour"></app-popsicle>
                 </div>
             </div>
             <div class="col-12 col-md-7 col-lg-6">
-                <app-order-form *ngIf="selectedFlavour" [flavours]="flavours" [selectedFlavour]="selectedFlavour" (onFlavourSelectionUpdate)="updateSelectedFlavour($event)"></app-order-form>
+                <app-order-form 
+                *ngIf="selectedFlavour" 
+                [flavours]="flavours" 
+                [selectedFlavour]="selectedFlavour" 
+                onFlavourSelectionUpdate)="updateSelectedFlavour($event)"></app-order-form>
             </div>
         </div>
     </div>

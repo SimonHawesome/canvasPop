@@ -1,8 +1,18 @@
 <form (ngSubmit)="submitOrder()" class="orderForm-wrapper">
     <h1 class="company-title">THE POPSICLE STOP</h1>
-    <div *ngIf="orderState !== orderStateEnum.Success" class="orderForm-container">
-        <div [class.disabled]="orderState === orderStateEnum.Processing" class="orderForm-input-container">
-            <input type="text" required [(ngModel)]="customerName" [disabled]="orderState === orderStateEnum.Processing" name="customerName" id="customerName" class="form-control customerName-input" placeholder="Your Name" pattern="[A-Za-z]{2}">
+    <div *ngIf="orderState !== orderStateEnum.Success" 
+    class="orderForm-container">
+        <div [class.disabled]="orderState === orderStateEnum.Processing" 
+        class="orderForm-input-container">
+            <input type="text" 
+            required 
+            [(ngModel)]="customerName" 
+            [disabled]="orderState === orderStateEnum.Processing" 
+            name="customerName" 
+            id="customerName" 
+            class="form-control customerName-input" 
+            placeholder="Your Name" 
+            pattern="[A-Za-z]{2}">
             <div class="flavour-container">
                 <div class="row">
                     <div class="col-7">
@@ -10,14 +20,22 @@
                         <div *ngFor="let flavour of flavours">
                             <label class="custom-input">
                         {{flavour.title}}
-                    <input type="radio" class="custom-control-input" name="flavours" [id]="flavour.id" [value]="flavour.title" [disabled]="orderState === orderStateEnum.Processing" [checked]="flavour.id === selectedFlavour.id" (change)="updateSelectedFlavour($event.target.value)">
+                    <input type="radio" 
+                    class="custom-control-input" 
+                    name="flavours" 
+                    [id]="flavour.id" 
+                    [value]="flavour.title" 
+                    [disabled]="orderState === orderStateEnum.Processing" 
+                    [checked]="flavour.id === selectedFlavour.id" 
+                    (change)="updateSelectedFlavour($event.target.value)">
                     <span class="flavour-radio"></span>
                 </label>
                         </div>
                     </div>
                     <div class="col-5">
                         <div class="popsicleMini-container">
-                            <app-popsicle *ngIf="selectedFlavour" [selectedFlavour]="selectedFlavour"></app-popsicle>
+                            <app-popsicle *ngIf="selectedFlavour" 
+                            [selectedFlavour]="selectedFlavour"></app-popsicle>
                         </div>
                     </div>
                 </div>
@@ -26,14 +44,21 @@
 
             <div class="subscribe-container">
                 <label class="custom-input">Subscribe to our weekly newsletter
-        <input type="checkbox" [(ngModel)]="shouldSubscribe" name="shouldSubscribe" [disabled]="orderState === orderStateEnum.Processing" checked="true">
+        <input type="checkbox" 
+        [(ngModel)]="shouldSubscribe" 
+        name="shouldSubscribe" 
+        [disabled]="orderState === orderStateEnum.Processing" 
+        checked="true">
         <span class="subscribe-checkmark"></span>
       </label>
 
             </div>
         </div>
 
-        <button [class.loading]="orderState === orderStateEnum.Processing" class="order-btn" type="submit"><img *ngIf="orderState === orderStateEnum.Processing" class="loading-img" src="../../assets/images/loading.png" />ORDER POPSICLE</button>
+        <button [class.loading]="orderState === orderStateEnum.Processing" class="order-btn" type="submit">
+            <img *ngIf="orderState === orderStateEnum.Processing" 
+            class="loading-img" 
+            src="../../assets/images/loading.png" />ORDER POPSICLE</button>
         <span *ngIf="errorMessage" class="error-message">{{errorMessage}}</span>
     </div>
     <div *ngIf="orderState === orderStateEnum.Success" class="orderForm-success">
