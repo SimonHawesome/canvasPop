@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
-import { HttpClient } from '@angular/common/http';
+import { HttpHeaders, HttpErrorResponse, HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Flavour } from '../models/flavour.model';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +24,27 @@ export class FlavoursService {
 
   getFlavours(): Observable<Flavour[]> {
 
-      return this._http.get<Flavour[]>(this.API_URL + '/flavours', this.httpOptions);
+      return this._http.get<Flavour[]>(this.API_URL + '/flavours', this.httpOptions).pipe(
+        tap(heroes => this.log(`fetched flavours`)),
+        catchError(this.handleError('getFlavours'))
+      ) as Observable<Flavour[]>;;
+  }
+
+  private handleError<T>(operation = 'operation') {
+    return (error: HttpErrorResponse): Observable<T> => {
+
+      console.error(error); // log to console instead
+
+      const message = (error.error instanceof ErrorEvent) ?
+        error.error.message :
+       `server returned code ${error.status} with body "${error.error}"`;
+
+      throw new Error(`${operation} failed: ${message}`);
+    };
+
+  }
+
+  private log(message: string) {
+    console.log('FlavourService: ' + message);
   }
 }

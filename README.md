@@ -1,6 +1,6 @@
 # Install Angular CLI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5. Requires Node LTS
+Run `npm install -g @angular/cli`. Requires Node LTS [https://nodejs.org/en/].
 
 ## Development server
 

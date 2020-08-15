@@ -13,7 +13,7 @@
                 *ngIf="selectedFlavour" 
                 [flavours]="flavours" 
                 [selectedFlavour]="selectedFlavour" 
-                onFlavourSelectionUpdate)="updateSelectedFlavour($event)"></app-order-form>
+                (onFlavourSelectionUpdate)="updateSelectedFlavour($event)"></app-order-form>
             </div>
         </div>
     </div>
