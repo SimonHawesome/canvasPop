@@ -4,7 +4,14 @@ Run `npm install -g @angular/cli`. Requires Node LTS [https://nodejs.org/en/].
 
 ## Development server
 
-Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To install:
+``npm install``
 
-## Run DB
-Run `npm run db`
+To run 
+``npm run start`` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+To start the sample REST API:
+``npm run db``
+
+Run test
+``ng test``
